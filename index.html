@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>PUBG 루트</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="PUBG 루트">
+<meta name="theme-color" content="#111214">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="vendor/leaflet.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="map"></div>
+
+<header id="top">
+  <div id="maps" role="tablist"></div>
+</header>
+
+<section id="panel">
+  <div id="hint">출발지를 탭하세요</div>
+  <div id="stats" hidden>
+    <div class="big"><span id="dist">0</span><small>m</small></div>
+  </div>
+  <div class="actions">
+    <button id="btnGrid" class="toggle on" type="button">격자</button>
+    <button id="btnUndo" type="button">되돌리기</button>
+    <button id="btnClear" type="button">초기화</button>
+  </div>
+</section>
+
+<div id="loading">지도 불러오는 중…</div>
+
+<script src="vendor/leaflet.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
