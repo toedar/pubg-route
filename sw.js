@@ -1,5 +1,5 @@
 // 앱 파일은 설치 시 저장, 지도 이미지는 처음 볼 때 저장 → 이후 오프라인 사용 가능
-const VERSION = 'v2';
+const VERSION = 'v3';
 const SHELL = `shell-${VERSION}`;
 const MAPS = 'maps-v1';
 const SHELL_FILES = [

@@ -126,21 +126,33 @@ html, body {
   color: var(--accent);
 }
 
-/* 핀 */
-.pin {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  border: 2.5px solid #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,.6);
-  font-weight: 800;
-  font-size: 13px;
-  color: #fff;
+/* 핀: 머리 부분만 터치를 받고, 나머지는 지도 탭으로 통과 */
+.pin.leaflet-marker-icon { pointer-events: none !important; background: none; border: 0; }
+.pin svg { display: block; overflow: visible; pointer-events: none; }
+.pin .needle {
+  fill: #e8e8e8;
+  stroke: #222;
+  stroke-width: 1.2;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,.6));
 }
-.pin.start { background: var(--start); }
-.pin.end { background: var(--end); }
-
+.pin .hit { fill: transparent; pointer-events: all; cursor: grab; }
+.pin .head {
+  stroke: #fff;
+  stroke-width: 2.5;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,.6));
+  pointer-events: none;
+}
+.pin.start .head { fill: var(--start); }
+.pin.end .head { fill: var(--end); }
+.pin text {
+  fill: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  text-anchor: middle;
+  dominant-baseline: central;
+  pointer-events: none;
+}
 
 #loading {
   position: fixed;

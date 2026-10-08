@@ -114,12 +114,20 @@ function drawGrid() {
 map.on('zoomend', () => gridOn && drawGrid());
 
 /* ---------- 경로 ---------- */
+// 옷핀 모양: 뾰족한 끝(왼쪽 위)이 찍은 위치, 머리(오른쪽 아래)를 잡고 옮긴다
+const PIN_SIZE = 68;
+const PIN_TIP = 3;
 function makeIcon(label, cls) {
   return L.divIcon({
     className: 'pin ' + cls,
-    html: `<span>${label}</span>`,
-    iconSize: [30, 30],
-    iconAnchor: [15, 15],
+    html: `<svg width="${PIN_SIZE}" height="${PIN_SIZE}" viewBox="0 0 ${PIN_SIZE} ${PIN_SIZE}">
+      <polygon class="needle" points="3,3 40.5,35.5 35.5,40.5" />
+      <circle class="hit" cx="46" cy="46" r="21" />
+      <circle class="head" cx="46" cy="46" r="14" />
+      <text x="46" y="46">${label}</text>
+    </svg>`,
+    iconSize: [PIN_SIZE, PIN_SIZE],
+    iconAnchor: [PIN_TIP, PIN_TIP],
   });
 }
 
